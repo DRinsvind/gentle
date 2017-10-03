@@ -1,0 +1,18 @@
+//Colors
+
+$white:#FFFFFF;
+$black:#2d2d2d;
+$blog:#444444;
+$darkGray: #504d4d;
+$gray:#747474;
+$blue:#0000ff;
+@mixin font($family-type, $size: 1rem, $weight : normal, $color : $DarkBlue){
+  font: {
+    family: $family-type;
+    size: $size;
+    weight: $weight;
+  }
+  color: $color;
+}
+
+$font: 'Muller', sans-serif;

@@ -1,0 +1,38 @@
+.header-top{
+  position: relative;
+  top:-300px;
+  transition-duration: 600ms;
+  transition-property: top;
+  &.active{
+    top:0px;
+  }
+  display: flex;
+  justify-content: space-between;
+  padding:30px 0px 60px;
+  @include breakpoint(max-width 800px){
+    padding:25px 0px 25px;
+  }
+  align-items: center;
+  @include breakpoint(max-width 600px){
+    flex-direction: column;
+  }
+  &__logo{
+    @include breakpoint(max-width 600px){
+      margin-bottom: 15px;
+    }
+  }
+  &__navigation-menu{
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    li{
+      &:not(:nth-child(1)){
+        margin-left: 35px;
+      }
+      a{
+        @include font($font,20px,400,$black);
+      }
+    }
+  }
+
+}

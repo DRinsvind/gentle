@@ -1,0 +1,6 @@
+.DS_Store
+/vrstk
+/node_modules
+/.idea
+/local
+npm-debug.log
