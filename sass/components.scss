@@ -14,13 +14,11 @@ body{
   flex-direction: column;
   min-height: 100vh;
 }
+section{
+  width:100%;
+}
 main{
   flex: 1;
-  &.main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 .link{
   display: block;
@@ -131,7 +129,7 @@ a.full{
 .modal-block{
   z-index: 200;
   background-color: white;
-  position: absolute;
+  position: fixed;
   width:450px;
   @include breakpoint(max-width 500px) {
     width:320px;

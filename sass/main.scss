@@ -1,5 +1,15 @@
-.main{
-
+section.main{
+  box-sizing: border-box;
+  padding: 0px 0px 50px;
+  box-sizing: border-box;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &>.container{
+    width:100%;
+  }
 }
 .main-block{
 
