@@ -54,7 +54,9 @@ main{
   text-transform: uppercase;
   margin: 0px auto 0px;
   text-align: center;
-
+  &__padding-top{
+    padding-top: 40px;
+  }
   max-width: 780px;
   span{
     display: block;
