@@ -1,11 +1,9 @@
 .header-top{
   position: relative;
-  top:-300px;
+
   transition-duration: 600ms;
   transition-property: top;
-  &.active{
-    top:0px;
-  }
+
   display: flex;
   justify-content: space-between;
   padding:30px 0px 60px;

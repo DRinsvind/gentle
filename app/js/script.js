@@ -1,8 +1,6 @@
 $().ready(function() {
 
-    setTimeout(function () {
-        $('.header-top').addClass('active');
-    },500);
+
     setTimeout(function () {
         $('.solution-list').addClass('active');
     },500);
@@ -48,6 +46,30 @@ $().ready(function() {
                     $(this).click();
                 }
             });
+            function mainScroll(el){
+
+            }
+            $('.main-anchor').click(function(e){
+                if($('main.main').length){
+                    e.preventDefault();
+                    var top = $($(this).attr('href')).offset().top;
+                    function open(){
+                        $("html,body").unbind("mousewheel", preventDefault);
+                    }
+                    function preventDefault(e) {
+                        e.preventDefault();
+                    }
+                    function close(){
+                        $("html,body").bind("mousewheel",preventDefault);
+                    }
+
+                    close();
+                    setTimeout(open,1000);
+                    $('html,body').animate({scrollTop: top}, 1000);
+                }
+
+            })
+
         },
         resizableFunctions:function(){
             function mainBlock(){
@@ -63,5 +85,8 @@ $().ready(function() {
         init.resizableFunctions();
     });
 
+    $(window).scroll(function(){
+        // console.log($('html').scrollTop())
+    })
 
 });
