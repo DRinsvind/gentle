@@ -28,6 +28,10 @@ $().ready(function() {
             $('.close-but').click(function(e){
                 $('.white-filter').removeClass('active');
                 $('.modal-block').removeClass('active');
+                setTimeout(function () {
+                    $('.success').removeClass('active');
+                },2000);
+
             });
             $('.solution-list__item').click(function(){
                 $('.solution-list__item').removeClass('active');
@@ -40,15 +44,17 @@ $().ready(function() {
         postRender:function(){
             var urlSplit = window.location.hash;
             $('.solution-list__item').each(function () {
-                console.log($(this).data('name'));
-                console.log($(this).data('name'));
+
+
                 if('#'+$(this).data('name')===urlSplit){
-                    $(this).click();
+                    $('.solution-list__item').removeClass('active');
+                    $(this).addClass('active');
+                    var id = $(this).data('id');
+                    $('.solution-content__item').removeClass('active');
+                    $('.solution-content__item-'+id).addClass('active');
                 }
             });
-            function mainScroll(el){
 
-            }
             $('.main-anchor').click(function(e){
                 if($('main.main').length){
                     e.preventDefault();
@@ -86,7 +92,19 @@ $().ready(function() {
     });
 
     $(window).scroll(function(){
-        // console.log($('html').scrollTop())
-    })
 
+    })
+    $("#form").submit(function(e) {
+        e.preventDefault();
+        var form_data = $(this).serialize();
+        $.ajax({
+            type: "POST",
+            url: "../mail.php",
+            data: form_data,
+            success: function() {
+                $('.success').addClass('active')
+                $('.close-but').click();
+                $('input,textarea').val('');
+            }});
+    });
 });

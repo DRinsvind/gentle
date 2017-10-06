@@ -164,14 +164,17 @@
   }
   &__logo{
     position: relative;
-    left:-400%;
     transition-property: left;
     transition-duration: 500ms;
-    &.active{
-      left:0px;
-      transition-property: left;
-      transition-duration: 500ms;
+    transform: scale(1);
+    transition-property: transform;
+    transition-duration: 0.48s;
+    transition-timing-function: ease-in-out;
+    transition-delay: initial;
+    &:hover{
+      transform: scale(1.1);
     }
+
     height:200px;
     @include breakpoint(max-width 900px) {
       height:300px;

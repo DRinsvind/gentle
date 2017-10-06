@@ -2,6 +2,31 @@
   padding: 0px;
   margin: 0px;
 }
+.success{
+  opacity: 0;
+  z-index: -10;
+  transition-duration: 800ms;
+  transition-property: opacity;
+  &.active{
+    transition-duration: 800ms;
+    transition-property: opacity;
+    opacity: 1;
+    z-index: 400;
+  }
+  position: fixed;
+  top:100px;
+  width: 100%;
+  h3{
+    background-color: white;
+    border-radius: 6px;
+    padding: 5px 10px;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.5);
+    text-align: center;
+    width:300px;
+    margin: 0px auto;
+    @include font($font,25px,400,$black);
+  }
+}
 .container{
   max-width: 1000px!important;
 }
@@ -120,7 +145,7 @@ main{
 a.full{
 
   display: block;
-
+  overflow: hidden;
   text-decoration: none;
   &:hover{
     text-decoration: none;
@@ -259,4 +284,5 @@ a.all{
   position: absolute;
   top: 0px;
   left: 0px;
+  z-index:50;
 }
